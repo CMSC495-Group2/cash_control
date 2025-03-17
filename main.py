@@ -39,6 +39,9 @@ class TransactionHistory():
             print("No transactions found!")
         else:
             for transaction in self.transaction_history.items():
+                #items() returns a tuple of the dictionary values
+                #the value at 0 is the key, the value at 1 is the values
+                #Since the values are an array, they need to be accessed individually as well
                 print("")
                 print(f"ID: {transaction[0]}")
                 print(f"Category: {self.transaction_history[transaction[0]][0]}")
