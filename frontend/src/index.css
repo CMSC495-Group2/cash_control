@@ -1,0 +1,96 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Poppins:wght@300;400;500;600;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Spinnaker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spinnaker&family=Tillana:wght@400;500;600;700;800&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+  outline: none;
+  font-family: "Spinnaker", sans-serif;
+}
+
+.light {
+  --second: #4389df;
+  --third: #f7fbff;
+  --hover: #dbebff;
+  --main: #a4cdff;
+}
+
+.dark {
+  --second: #67a2eb;
+  --third: #031c3b;
+  --text: rgb(234, 234, 234);
+  --hover: #21314e;
+  --main: #3b4763;
+}
+::selection {
+  background-color: var(--second);
+  color: var(--third);
+}
+h1 {
+  color: var(--second);
+}
+h1.logo {
+  font-family: "Tillana", system-ui;
+  cursor: pointer;
+}
+h1.logo:hover {
+  text-decoration: none;
+}
+.logo span {
+  display: inline-block;
+  background-image: url('./assets/images/logo.png');
+  height: 40px;
+  width: 40px;
+  background-position: right;
+  background-size: cover;
+  margin-right: 8px;
+}
+
+button, .button {
+  text-align: center;
+  padding: 15px 25px;
+  width: 180px;
+  border-radius: 30px;
+  font-size: 15px;
+  border: none;
+  background-color: var(--second);
+  border: 2px solid var(--second);
+  color: var(--third);  
+}
+button:hover, .button:hover {
+  border: 2px solid var(--text);  
+  text-decoration: none;
+}
+button:active, .button:active {
+  scale: 0.99;
+}
+.button {
+  width: 100%;
+  padding: 10px 0;
+}
+button.loading, .button.loading {
+  opacity: 0.7;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+.button.outline {
+  background-color: transparent;
+  text-decoration: none;
+}
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100dvh;
+  flex-direction: column;
+  gap: 25px;
+}
+main h3 {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+}
