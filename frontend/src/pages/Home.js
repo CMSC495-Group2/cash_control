@@ -8,12 +8,12 @@ function Home(){
             <NavBar/>
             <div className="hero">
                 <img src={heroImage} alt="Cash Control Hero" className="hero-image"/>
-                <div className="hero-text">
+            </div>
+            <div className="hero-text">
                     <h1>Take Control of Your Budget</h1>
                     <p>Cash Control helps you manage your finances with ease—locally, securely, and without the cloud.</p>
                     <a href="#start" className="start-button">Get Started!</a>
                 </div>
-            </div>
         </div>
     )
 };

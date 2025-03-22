@@ -1,6 +1,9 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Poppins:wght@300;400;500;600;700&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Spinnaker&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Spinnaker&family=Tillana:wght@400;500;600;700;800&display=swap');
+@import url('./assets/styles/home.css');
+@import url('./assets/styles/navbar.css');
+
 *{
   margin: 0;
   padding: 0;
