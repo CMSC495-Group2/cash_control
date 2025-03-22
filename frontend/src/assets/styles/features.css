@@ -1,0 +1,21 @@
+.features-page{
+    background-color: white;
+    color: #374c59;
+}
+
+.features-heading{
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #374c59;
+}
+
+.features-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+    background-color: #84e4a8;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
