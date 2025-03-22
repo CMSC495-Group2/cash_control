@@ -1,10 +1,16 @@
 import "./index.css";
 import React from "react";
-import {Routes, Route, Navigate, Outlet} from "react-router-dom";
+import {Routes, Route, Navigate} from "react-router-dom";
+import Home from "./pages/Home";
 
 
 function App (){
     return(
-        <h1>Hello World!</h1>
+        <Routes>
+            <Route path="/" element={<Home/>}/>
+            <Route path="*" element={<Navigate to="/"/>}/>
+        </Routes>
     )
 }
+
+export default App;

@@ -41,7 +41,7 @@ h1.logo:hover {
 }
 .logo span {
   display: inline-block;
-  background-image: url('./assets/images/logo.png');
+  background-image: url('./assets/images/cash_control_dark_logo.png');
   height: 40px;
   width: 40px;
   background-position: right;
