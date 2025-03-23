@@ -1,0 +1,49 @@
+.get-started-form{
+    background-color: #374c59;
+    padding: 2rem;
+    max-width: 400px;
+    width: 100%;
+    margin: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.get-started-form h2{
+    text-align: center;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.get-started-form label{
+    display: block;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.get-started-form input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--main);
+    border-radius: 4px;
+    margin-top: 5px;
+    background-color: white;
+}
+
+.get-started-form button{
+    padding: 0.75rem 2rem;
+    background-color: #374c59;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    display: inline-block;
+    border: 1px solid white;
+    transition: background-color 0.3s ease;
+    
+}
+
+.get-started-form button:hover{
+    background-color: white;
+    color: #374c59;
+    border: 1px solid #374c59;
+}
