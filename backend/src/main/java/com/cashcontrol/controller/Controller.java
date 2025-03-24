@@ -39,12 +39,12 @@ public class Controller {
         return userService.fetchUserList();
     }
 
-    @PutMapping("/api/get-transactions")
+    @PutMapping("/api/users")
     public String getTransactions() {
         return "Tranactions";
     }
 
-    @DeleteMapping("/api/add-transactions")
+    @DeleteMapping("/api/users")
     public String addTransaction() {
         return "Add Transaction";
     }
