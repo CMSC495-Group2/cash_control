@@ -18,7 +18,10 @@ The link can be found here
  \/
 https://www.h2database.com/html/main.html
 
-
+### Use this link as a reference!!
+https://www.geeksforgeeks.org/spring-boot-with-h2-database/#
+Feel free to use anything that helps you learn, but the above link worked wonders for me.
+I modified the example to fit our needs.
 
 To run backend use: `./mvnw spring-boot:run`
  - if error occurs, besure to add execute permissions to mvnw: `chmod +x mvnw`
