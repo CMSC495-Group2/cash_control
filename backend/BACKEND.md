@@ -12,6 +12,13 @@ curl https://start.spring.io/starter.zip \
   -d baseDir=. \
   -o temp.zip && unzip -o temp.zip && rm temp.zip
 ```
+## YOU MUST INSTALL H2 DATABASE!!
+The link can be found here 
+ |
+ \/
+https://www.h2database.com/html/main.html
+
+
 
 To run backend use: `./mvnw spring-boot:run`
  - if error occurs, besure to add execute permissions to mvnw: `chmod +x mvnw`
