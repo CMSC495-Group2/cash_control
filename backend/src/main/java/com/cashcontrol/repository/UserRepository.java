@@ -1,8 +1,9 @@
 package com.cashcontrol.repository;
 
-import com.cashcontrol.entity.Users;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+
+import com.cashcontrol.entity.Users;
 
 @Repository
 

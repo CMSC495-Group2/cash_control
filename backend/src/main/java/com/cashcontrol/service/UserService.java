@@ -1,7 +1,8 @@
 package com.cashcontrol.service;
 
-import com.cashcontrol.entity.Users;
 import java.util.List;
+
+import com.cashcontrol.entity.Users;
 
 public interface UserService {
 /*
