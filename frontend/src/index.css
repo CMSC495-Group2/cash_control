@@ -6,6 +6,7 @@
 @import url('./assets/styles/featurecard.css');
 @import url('./assets/styles/features.css');
 @import url('./assets/styles/getstartedform.css');
+@import url('./assets/styles/loginform.css');
 
 *{
   margin: 0;
