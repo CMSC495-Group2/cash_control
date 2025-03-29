@@ -22,6 +22,9 @@ function NavBar() {
           <Link to="/login">Login</Link>
         </li>
         <li>
+          <Link to="/user-portal">User Portal (provisional)</Link>
+        </li>
+        <li>
           <a
             href="https://github.com/CMSC495-Group2"
             target="_blank"

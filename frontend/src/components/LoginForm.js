@@ -49,15 +49,15 @@ const LoginForm = () => {
   return (
     <>
       {success ? (
-        <section className="login-success-section">
+        <div className="login-success-section">
           <h1>You are logged in!</h1>
           <br />
           <p>
             <Link to="/user-portal">Go to User Portal</Link>
           </p>
-        </section>
+        </div>
       ) : (
-        <section className="login-form-section">
+        <div className="login-column">
           <p
             ref={errRef}
             className={errMsg ? "errMsg" : "offscreen"}
@@ -97,7 +97,7 @@ const LoginForm = () => {
               <Link to="/get-started">Sign Up</Link>
             </span>
           </form>
-        </section>
+        </div>
       )}
     </>
   );

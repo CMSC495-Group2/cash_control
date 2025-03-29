@@ -1,12 +1,12 @@
 import React from "react";
 import LoginForm from "../components/LoginForm";
+import LoginImage from "../components/LoginImage";
 
 function Login() {
   return (
-    <div className="login-page">
-      <main className="login-main">
-        <LoginForm />
-      </main>
+    <div className="container">
+      <LoginImage />
+      <LoginForm />
     </div>
   );
 }

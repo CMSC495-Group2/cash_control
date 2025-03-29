@@ -7,6 +7,8 @@
 @import url('./assets/styles/features.css');
 @import url('./assets/styles/getstartedform.css');
 @import url('./assets/styles/loginform.css');
+@import url('./assets/styles/userportal.css');
+
 
 *{
   margin: 0;

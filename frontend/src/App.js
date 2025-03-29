@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Features from "./pages/Features";
 import GetStarted from "./pages/GetStarted";
 import Login from "./pages/Login";
+import UserPortal from "./pages/UserPortal";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path="/get-started" element={<GetStarted />} />
       <Route path="*" element={<Navigate to="/" />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/user-portal" element={<UserPortal />} />
     </Routes>
   );
 }
