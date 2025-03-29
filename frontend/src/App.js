@@ -15,7 +15,7 @@ function App() {
       <Route path="/get-started" element={<GetStarted />} />
       <Route path="*" element={<Navigate to="/" />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/user-portal" element={<UserPortal />} />
+      <Route path="/user-portal/:id" element={<UserPortal />} />
     </Routes>
   );
 }

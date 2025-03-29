@@ -1,20 +1,18 @@
 import React from "react";
 import { useRef, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { getUserList, getUser} from "../api/userApi";
 
 const LoginForm = () => {
   const userRef = useRef();
   const errRef = useRef();
-  //const history = useHistory();
-
-  const [user, setUser] = useState("");
-  const [pwd, setPwd] = useState("");
+  const navigate = useNavigate();
+ 
   const [errMsg, setErrMsg] = useState("");
-  const [success, setSuccess] = useState(false);
 
   const [formData, setFormData] = useState({
     username: "",
-    password: "",
+    email: "",
   });
 
   useEffect(() => {
@@ -23,40 +21,51 @@ const LoginForm = () => {
 
   useEffect(() => {
     setErrMsg("");
-  }, [user, pwd]);
+  }, [formData]);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      // Simulate authentication.
-      console.log(user, pwd);
-      setUser("");
-      setPwd("");
-      setSuccess(true);
-    } catch (err) {
-      setErrMsg("Failed to login. Please try again.");
-    }
-  };
-
-  //concept taken from GetStartedForm
   const handleChange = (event) => {
+    const { name, value } = event.target;
     setFormData((prev) => ({
       ...prev,
-      [event.target.name]: event.target.value,
+      [name]: value,
     }));
   };
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      // First, get the full list of users
+      const response = await getUserList();
+      const users = response.data;
+
+      // Find the correct user with name and email
+      const match = users.find((user) =>{
+        console.log(user);
+        return user.email === formData.email
+      });
+
+      console.log (match);
+
+      if(match){
+        // Get the user 
+        console.log(match.userID)
+        const userResponse = await getUser(match.userID);
+        const user = userResponse.data;
+
+        // Redirect to user portal
+        navigate(`/user-portal/${user.userID}`);
+      }else{
+        setErrMsg("Invalid name or email. Please try again.");
+      }
+    } catch (error) {
+      console.error(error);
+      setErrMsg("Login failed. Server error.");
+    }
+  };
+
+  
+
   return (
-    <>
-      {success ? (
-        <div className="login-success-section">
-          <h1>You are logged in!</h1>
-          <br />
-          <p>
-            <Link to="/user-portal">Go to User Portal</Link>
-          </p>
-        </div>
-      ) : (
         <div className="login-column">
           <p
             ref={errRef}
@@ -67,27 +76,28 @@ const LoginForm = () => {
           </p>
           <form className="login-form" onSubmit={handleSubmit}>
             <h2>Account Login</h2>
-            <label htmlFor="username">
-              Username
+            <label htmlFor="name">
+              Name
               <input
                 type="text"
-                id="username"
-                placeholder="Enter your username"
+                id="name"
+                placeholder="Enter your name"
                 ref={userRef}
                 autoComplete="off"
                 onChange={handleChange}
-                value={formData.user}
+                value={formData.name}
                 required
               />
             </label>
-            <label htmlFor="password">
-              Password
+            <label htmlFor="email">
+              Email
               <input
-                type="password"
-                id="password"
+                type="email"
+                id="email"
+                name="email"
                 onChange={handleChange}
-                placeholder="Enter your password"
-                value={formData.pwd}
+                placeholder="Enter your email"
+                value={formData.email}
                 required
               />
             </label>
@@ -98,8 +108,6 @@ const LoginForm = () => {
             </span>
           </form>
         </div>
-      )}
-    </>
   );
 };
 

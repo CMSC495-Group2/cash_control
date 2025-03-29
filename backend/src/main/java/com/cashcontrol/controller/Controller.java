@@ -28,6 +28,8 @@ public class Controller {
 
     @Autowired private UserService userService;
 
+    // ALL USERS
+
     @PostMapping("/api/users")
     public Users saveUser(@RequestBody Users user){
         return userService.saveUser(user);
@@ -49,5 +51,10 @@ public class Controller {
         return "Add Transaction";
     }
 
+    // SINGLE USER
 
+    @GetMapping("/api/users/{id}")
+    public Users getUser(@PathVariable Long id){
+        return userService.getUser(id);
+    }
 }
