@@ -1,4 +1,4 @@
-.container{
+.login-container{
     display: flex;
     height: 100vh;
 }
@@ -33,7 +33,7 @@
     padding: 70px;
     background-color: #374c59;
     box-shadow: 0 0px 100px rgba(0,0,0,0.8);
-    border-radius: 80px;
+    border-radius: 8px;
 }
 
 .login-form h2{

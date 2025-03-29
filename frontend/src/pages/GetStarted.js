@@ -4,12 +4,14 @@ import GetStartedForm from "../components/GetStartedForm";
 
 function GetStarted(){
     return(
-        <div className="get-started-page">
-            <NavBar/>
-            <main className="get-started-main">
-                <GetStartedForm/>
-            </main>
+        <>
+        <NavBar/>
+        <div className="get-started-container">
+            <div className="form-wrapper">
+          <GetStartedForm />
+          </div>
         </div>
+        </>
     );
 }
 

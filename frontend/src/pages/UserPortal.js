@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import NavBar from "../components/NavBar";
 
 const UserPortal = () => {
   // Load initial transactions from localStorage or set default ones
@@ -57,6 +58,9 @@ const UserPortal = () => {
   };
 
   return (
+    <>
+    
+    <NavBar/>
     <div className="user-portal">
       <h1>Welcome to Your Budget Tracker</h1>
       <div className="budget-summary">
@@ -110,6 +114,7 @@ const UserPortal = () => {
         </ul>
       </div>
     </div>
+    </>
   );
 };
 
