@@ -32,6 +32,13 @@ public class UserServiceImplementation implements UserService{
         return (List<Users>)userRepository.findAll();
     };
 
+    // Get Single User
+    @Override
+    public Users getUser(Long id){
+        return userRepository.findById(id)
+        .orElseThrow(() -> new RuntimeException("User not found with id: " + id));
+    }
+
     //TODO: Allow for updates to the user object. Need to figure out how to do this
     //Should not be hard, I just dont know how right now
     @Override

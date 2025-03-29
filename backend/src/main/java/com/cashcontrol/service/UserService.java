@@ -8,11 +8,15 @@ public interface UserService {
 /*
  * User Service interface, self explainatory.
  */
+
     //Save User
     Users saveUser(Users user);
 
-    //Read User Info
+    //Read User List Info
     List<Users> fetchUserList();
+
+    // Get single user
+    Users getUser(Long userId);
 
     //update user
     Users updateUser(Users user, Long userID);

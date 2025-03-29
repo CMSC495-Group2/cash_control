@@ -1,7 +1,26 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "../components/NavBar";
+import { useParams } from "react-router-dom";
+import { getUser } from "../api/userApi";
 
 const UserPortal = () => {
+  const {id} = useParams();
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const fetchUser = async() => {
+      try{
+        console.log("FETCH USER id: ", id)
+        const response = await getUser(id);
+        setUser(response.data);
+      }catch(error){
+        console.error("Error fetching user: ", error);
+      }
+    }
+    fetchUser();
+  }, [id]);
+
+  console.log("USER PORTAL user: ", user);
   // Load initial transactions from localStorage or set default ones
   const initialTransactions = JSON.parse(
     localStorage.getItem("transactions")
@@ -61,8 +80,10 @@ const UserPortal = () => {
     <>
     
     <NavBar/>
-    <div className="user-portal">
-      <h1>Welcome to Your Budget Tracker</h1>
+    {user ? (
+
+<div className="user-portal">
+      <h2>Welcome, {user.name} to Your Budget Tracker!</h2>
       <div className="budget-summary">
         <h2>Budget Summary</h2>
         <p>
@@ -114,6 +135,8 @@ const UserPortal = () => {
         </ul>
       </div>
     </div>
+    ):(<h1>Loading user...</h1>)}
+    
     </>
   );
 };

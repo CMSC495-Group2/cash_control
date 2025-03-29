@@ -1,7 +1,11 @@
 import React,{useState} from "react";
+import {useNavigate} from "react-router-dom";
+import { createUser } from "../api/userApi";
 
 
 function GetStartedForm(){
+    const navigate = useNavigate();
+
     const [formData, setFormData] = useState({
         name: "",
         email: ""
@@ -14,11 +18,17 @@ function GetStartedForm(){
         }));
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        // placeholder logic until backend exists
-        console.log("Form Submitted: ", formData);
-        alert(`Welcome, ${formData.name}!`)
+        try{
+            const response = await createUser(formData);
+            const userId = response.data.userID;
+            alert(`Welcome, ${response.data.name}!`);
+            navigate(`/user-portal/${userId}`);
+        }catch (error){
+            console.error("Error creating user: ", error);
+            alert("Something went wrong. Please try again.");
+        }
     };
 
     return(
