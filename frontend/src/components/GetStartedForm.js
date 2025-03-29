@@ -1,5 +1,6 @@
 import React,{useState} from "react";
 
+
 function GetStartedForm(){
     const [formData, setFormData] = useState({
         name: "",
@@ -21,6 +22,7 @@ function GetStartedForm(){
     };
 
     return(
+        
         <form className="get-started-form" onSubmit={handleSubmit}>
             <h2>Get Started!</h2>
             <label>
@@ -45,6 +47,7 @@ function GetStartedForm(){
             </label>
             <button type="submit">Create Account</button>
         </form>
+     
     );
 }
 

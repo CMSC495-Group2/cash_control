@@ -1,0 +1,36 @@
+.user-portal {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white; 
+}
+
+.budget-summary {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #374c59; 
+    border-radius: 5px;
+    background-color: #84e4a8;
+}
+
+.add-transaction {
+    margin-bottom: 20px;
+}
+
+.add-transaction input {
+    margin-right: 10px;
+    border: 1px solid #374c59; /* Darker color for input border */
+    padding: 5px;
+}
+
+.transactions-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.transaction-item {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc; /* Keep existing for subtle lines */
+    padding-bottom: 10px;
+    color: #374c59; /* Darker color for text */
+}
