@@ -3,7 +3,7 @@
     height: 100vh;
 }
 
-.image-column {
+.image-column { 
     flex: 1;
     display: flex;
     justify-content: center;

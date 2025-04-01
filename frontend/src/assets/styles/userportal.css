@@ -1,8 +1,30 @@
-.user-portal {
+/* .user-portal {
     padding: 20px;
     max-width: 600px;
     margin: 0 auto;
     background-color: white; 
+} */
+
+.user-portal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #333;
+    padding: 20px;
+}
+
+.content{
+    margin-left: 200px;
+    padding: 20px;
 }
 
 .budget-summary {

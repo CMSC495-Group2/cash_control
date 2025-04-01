@@ -1,22 +1,27 @@
+import { TabSelector } from "./../components/TabSelector";
+import { TransactionsList } from "./../components/TransactionsList";
+import { BudgetSummary } from "./../components/BudgetSummary";
 import React, { useState, useEffect } from "react";
 import NavBar from "../components/NavBar";
 import { useParams } from "react-router-dom";
 import { getUser } from "../api/userApi";
+import TransactionForm from "./../components/TransactionForm";
 
 const UserPortal = () => {
-  const {id} = useParams();
+  const { id } = useParams();
   const [user, setUser] = useState(null);
+  const [activeTab, setActiveTab] = useState("summary");
 
   useEffect(() => {
-    const fetchUser = async() => {
-      try{
-        console.log("FETCH USER id: ", id)
+    const fetchUser = async () => {
+      try {
+        console.log("FETCH USER id: ", id);
         const response = await getUser(id);
         setUser(response.data);
-      }catch(error){
+      } catch (error) {
         console.error("Error fetching user: ", error);
       }
-    }
+    };
     fetchUser();
   }, [id]);
 
@@ -78,65 +83,30 @@ const UserPortal = () => {
 
   return (
     <>
-    
-    <NavBar/>
-    {user ? (
-
-<div className="user-portal">
-      <h2>Welcome, {user.name} to Your Budget Tracker!</h2>
-      <div className="budget-summary">
-        <h2>Budget Summary</h2>
-        <p>
-          <strong>Total Balance:</strong> ${balance.toFixed(2)}
-        </p>
-      </div>
-
-      <div className="add-transaction">
-        <h2>Add New Transaction</h2>
-        <input
-          type="date"
-          name="date"
-          value={newTransaction.date}
-          onChange={handleChange}
-          placeholder="Date"
-        />
-        <input
-          type="text"
-          name="description"
-          value={newTransaction.description}
-          onChange={handleChange}
-          placeholder="Description"
-        />
-        <input
-          type="number"
-          name="amount"
-          value={newTransaction.amount}
-          onChange={handleChange}
-          placeholder="Amount"
-        />
-        <button onClick={addTransaction}>Add Transaction</button>
-      </div>
-
-      <div>
-        <h2>Recent Transactions</h2>
-        <ul className="transactions-list">
-          {transactions.map((transaction) => (
-            <li key={transaction.id} className="transaction-item">
-              <strong>Date:</strong> {transaction.date}
-              <br />
-              <strong>Description:</strong> {transaction.description}
-              <br />
-              <strong>Amount:</strong> ${transaction.amount.toFixed(2)}
-              <button onClick={() => deleteTransaction(transaction.id)}>
-                Delete
-              </button>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-    ):(<h1>Loading user...</h1>)}
-    
+      <NavBar />
+      {user ? (
+        <div className="user-portal">
+          <TabSelector activeTab={activeTab} setActiveTab={setActiveTab} />
+          <main className="content">
+            {activeTab === "summary" && <BudgetSummary balance={balance} />}
+            {activeTab === "transactions" && (
+              <TransactionForm
+                newTransaction={newTransaction}
+                handleChange={handleChange}
+                addTransaction={addTransaction}
+              />
+            )}
+            {activeTab === "addTransaction" && (
+              <TransactionsList
+                transactions={transactions}
+                deleteTransaction={deleteTransaction}
+              />
+            )}
+          </main>
+        </div>
+      ) : (
+        <h1>Loading user...</h1>
+      )}
     </>
   );
 };
