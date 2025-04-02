@@ -1,0 +1,6 @@
+1. Login with a valid name and email address
+2. Copy the URL of the transactions page (http://localhost:3000/user-portal/2)
+3. Logout
+4. Attempt to access the transactions page by pasting the url into the address bar
+5. Verify you are not able to view the transactions page while not logged
+in as an authenticated user

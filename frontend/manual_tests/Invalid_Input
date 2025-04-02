@@ -1,0 +1,13 @@
+1. Open the transactions page
+2. Attempt to enter an invalid transaction
+ - Amount value is not a number
+ - Date is missing
+ - Type is missing
+ - Amount is missing
+3. Verify you are prevented from entering an invalid transaction
+4. Open the Get Started page
+5. Attempt to create an invalid user account (be creative)
+ - Invalid name
+ - Invalid email
+ - Missing name
+ - Missing email
