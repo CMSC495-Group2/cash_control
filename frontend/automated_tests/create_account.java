@@ -25,8 +25,6 @@ public class TestSample {
             WebElement createAccountButton = driver.findElement(By.name("Create Account"));
             createAccountButton.click();
 
-            Thread.sleep(3000);
-
             driver.quit();
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
