@@ -1,6 +1,6 @@
 import { TabSelector } from "./../components/TabSelector";
 import { TransactionsList } from "./../components/TransactionsList";
-import { BudgetSummary } from "./../components/BudgetSummary";
+import { SummariesChart } from "./../components/SummariesChart";
 import React, { useState, useEffect } from "react";
 import NavBar from "../components/NavBar";
 import { useParams } from "react-router-dom";
@@ -87,22 +87,20 @@ const UserPortal = () => {
       {user ? (
         <div className="user-portal">
           <TabSelector activeTab={activeTab} setActiveTab={setActiveTab} />
-          <main className="content">
-            {activeTab === "summary" && <BudgetSummary balance={balance} />}
-            {activeTab === "transactions" && (
-              <TransactionForm
-                newTransaction={newTransaction}
-                handleChange={handleChange}
-                addTransaction={addTransaction}
-              />
-            )}
-            {activeTab === "addTransaction" && (
-              <TransactionsList
-                transactions={transactions}
-                deleteTransaction={deleteTransaction}
-              />
-            )}
-          </main>
+          {activeTab === "summary" && <SummariesChart balance={balance} />}
+          {activeTab === "transactions" && (
+            <TransactionForm
+              newTransaction={newTransaction}
+              handleChange={handleChange}
+              addTransaction={addTransaction}
+            />
+          )}
+          {activeTab === "addTransaction" && (
+            <TransactionsList
+              transactions={transactions}
+              deleteTransaction={deleteTransaction}
+            />
+          )}
         </div>
       ) : (
         <h1>Loading user...</h1>

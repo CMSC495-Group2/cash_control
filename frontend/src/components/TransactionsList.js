@@ -1,8 +1,8 @@
 import React from "react";
 export function TransactionsList({ transactions, deleteTransaction }) {
   return (
-    <div>
-      <h2>Recent Transactions</h2>
+    <div className="transactions-container">
+      <h2 className="transaction-header">Recent Transactions</h2>
       <ul className="transactions-list">
         {transactions.map((transaction) => (
           <li key={transaction.id} className="transaction-item">

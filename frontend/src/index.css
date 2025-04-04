@@ -1,16 +1,16 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Poppins:wght@300;400;500;600;700&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Spinnaker&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Spinnaker&family=Tillana:wght@400;500;600;700;800&display=swap');
-@import url('./assets/styles/home.css');
-@import url('./assets/styles/navbar.css');
-@import url('./assets/styles/featurecard.css');
-@import url('./assets/styles/features.css');
-@import url('./assets/styles/getstartedform.css');
-@import url('./assets/styles/loginform.css');
-@import url('./assets/styles/userportal.css');
+@import url("https://fonts.googleapis.com/css2?family=Spinnaker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Spinnaker&family=Tillana:wght@400;500;600;700;800&display=swap");
+@import url("./assets/styles/home.css");
+@import url("./assets/styles/navbar.css");
+@import url("./assets/styles/featurecard.css");
+@import url("./assets/styles/features.css");
+@import url("./assets/styles/getstartedform.css");
+@import url("./assets/styles/loginform.css");
+@import url("./assets/styles/userportal.css");
+@import url("./assets/styles/tabselector.css");
 
-
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -50,7 +50,7 @@ h1.logo:hover {
 }
 .logo span {
   display: inline-block;
-  background-image: url('./assets/images/cash_control_dark_logo.png');
+  background-image: url("./assets/images/cash_control_dark_logo.png");
   height: 40px;
   width: 40px;
   background-position: right;
@@ -58,7 +58,8 @@ h1.logo:hover {
   margin-right: 8px;
 }
 
-button, .button {
+button,
+.button {
   text-align: center;
   padding: 15px 25px;
   width: 180px;
@@ -67,20 +68,23 @@ button, .button {
   border: none;
   background-color: var(--second);
   border: 2px solid var(--second);
-  color: var(--third);  
+  color: var(--third);
 }
-button:hover, .button:hover {
-  border: 2px solid var(--text);  
+button:hover,
+.button:hover {
+  border: 2px solid var(--text);
   text-decoration: none;
 }
-button:active, .button:active {
+button:active,
+.button:active {
   scale: 0.99;
 }
 .button {
   width: 100%;
   padding: 10px 0;
 }
-button.loading, .button.loading {
+button.loading,
+.button.loading {
   opacity: 0.7;
   pointer-events: none;
   cursor: not-allowed;

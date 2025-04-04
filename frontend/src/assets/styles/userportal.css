@@ -1,58 +1,41 @@
-/* .user-portal {
-    padding: 20px;
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: white; 
-} */
-
-.user-portal{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
+.user-portal {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  justify-content: center;
+  background-color: #84e4a8;
+  width: 100%;
+  margin-bottom: 20px;
+  min-height: 100vh;
 }
 
-.sidebar{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 100vh;
-    background-color: #333;
-    padding: 20px;
+.user-portal::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+  filter: brightness(0.6);
 }
 
-.content{
-    margin-left: 200px;
-    padding: 20px;
-}
-
-.budget-summary {
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #374c59; 
-    border-radius: 5px;
-    background-color: #84e4a8;
-}
-
-.add-transaction {
-    margin-bottom: 20px;
-}
-
-.add-transaction input {
-    margin-right: 10px;
-    border: 1px solid #374c59; /* Darker color for input border */
-    padding: 5px;
+.transaction-header {
+  font-size: 2.5rem;
 }
 
 .transactions-list {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 .transaction-item {
-    margin-bottom: 10px;
-    border-bottom: 1px solid #ccc; /* Keep existing for subtle lines */
-    padding-bottom: 10px;
-    color: #374c59; /* Darker color for text */
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  font-size: 1.25rem;
+  padding-bottom: 10px;
+  color: #374c59;
 }
