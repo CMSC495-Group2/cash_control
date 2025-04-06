@@ -1,6 +1,6 @@
 import React from "react";
 
-const TransactionForm = ({ newTransaction, handleChange, addTransaction }) => {
+const AddTransaction = ({ newTransaction, handleChange, addTransaction }) => {
   return (
     <div className="add-transaction">
       <h2>Add New Transaction</h2>
@@ -30,4 +30,4 @@ const TransactionForm = ({ newTransaction, handleChange, addTransaction }) => {
   );
 };
 
-export default TransactionForm;
+export default AddTransaction;

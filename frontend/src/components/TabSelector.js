@@ -2,28 +2,27 @@ import React from "react";
 
 export function TabSelector({ activeTab, setActiveTab }) {
   return (
-    <aside className="sidebar">
-      <header> User Portal</header>
-      <ul className="nav nav-tabs">
+    <aside className="tab-selector">
+      <header>User Portal</header>
+      <ul className="tabs">
         <li
-          className={activeTab === "summary" ? "active" : ""}
-          onClick={() => setActiveTab("summary")}
+          className={activeTab === "summaries-chart" ? "active" : ""}
+          onClick={() => setActiveTab("summaries-chart")}
         >
-          Budget Summary
+          <i className="fas fa-file-invoice-dollar"></i> &nbsp; Budget Summary
         </li>
         <li
-          className={activeTab === "addTransaction" ? "active" : ""}
-          onClick={() => setActiveTab("addTransaction")}
+          className={activeTab === "transactions-list" ? "active" : ""}
+          onClick={() => setActiveTab("transactions-list")}
         >
-          Transactions
+          <i className="fa fa-receipt"></i> &nbsp; Transactions
         </li>
         <li
-          className={activeTab === "transactions" ? "active" : ""}
-          onClick={() => setActiveTab("transactions")}
+          className={activeTab === "add-transaction" ? "active" : ""}
+          onClick={() => setActiveTab("add-transaction")}
         >
-          Add New +
+          <i className="fa fa-plus"></i> &nbsp; New Transaction
         </li>
-        <li>Something Else Here</li>
         <li>Another</li>
         <li>And Another one</li>
       </ul>

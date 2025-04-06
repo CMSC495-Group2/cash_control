@@ -1,8 +1,8 @@
 import React from "react";
 export function TransactionsList({ transactions, deleteTransaction }) {
   return (
-    <div className="transactions-container">
-      <h2 className="transaction-header">Recent Transactions</h2>
+    <>
+      <h2 className="transactions-header">Recent Transactions</h2>
       <ul className="transactions-list">
         {transactions.map((transaction) => (
           <li key={transaction.id} className="transaction-item">
@@ -17,6 +17,6 @@ export function TransactionsList({ transactions, deleteTransaction }) {
           </li>
         ))}
       </ul>
-    </div>
+    </>
   );
 }
