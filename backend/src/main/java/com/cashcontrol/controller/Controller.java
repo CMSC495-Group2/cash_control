@@ -43,6 +43,12 @@ public class Controller {
         return userService.fetchUserList();
     }
 
+    //list single user currently in the db
+    @GetMapping("/api/user")
+    public Users getUsers(@RequestParam("id") Long userID) {
+        return userService.getUser(userID);
+    }
+
     @PutMapping("/api/users")
     public String getTransactions() {
         return "Tranactions";
@@ -73,7 +79,7 @@ public class Controller {
         return transactionService.fetchTransactionsList();
     }
 
-    @GetMapping("/api/singletransaction")
+    @GetMapping("/api/transaction")
     public Transactions fetchTransactionsList(@RequestParam("id") Long transactionID) {
         return transactionService.getTransaction(transactionID);
     }
