@@ -55,8 +55,8 @@ public class Controller {
     }
 
     @DeleteMapping("/api/users")
-    public String addTransaction() {
-        return "Add Transaction";
+    public void deleteUser(@RequestParam("id") Long UserID) {
+        userService.deleteUserById(UserID);
     }
 
     // SINGLE USER
@@ -68,17 +68,19 @@ public class Controller {
 
     //*****************Start of controller for transactions */
     
+    //insert transaction into DB
     @PostMapping("/api/transactions")
     public Transactions saveTransaction(@RequestBody Transactions transaction){
         return transactionService.saveTransaction(transaction);
     }
 
-    //list all transactions currently in the db
+    //list all transactions currently in the db. NOTE: /api/transaction is different from /api/transactions
     @GetMapping("/api/transactions")
     public List<Transactions> fetchTransactionsList() {
         return transactionService.fetchTransactionsList();
     }
 
+    //get single transaction from db. NOTE: /api/transaction is different from /api/transactions
     @GetMapping("/api/transaction")
     public Transactions fetchTransactionsList(@RequestParam("id") Long transactionID) {
         return transactionService.getTransaction(transactionID);
