@@ -32,9 +32,8 @@ public class Transactions {
     private Long transactionID;
     private Long userID;
     private String transactionType;
-    private String amount;
-    private LocalDate dateHelper = LocalDate.now(); 
-    private String date = dateHelper.toString();
+    private Long amount;
+    private LocalDate dateHelper = LocalDate.now();
     private String category;
     private String description = "";
     private Long createdAt = System.currentTimeMillis();

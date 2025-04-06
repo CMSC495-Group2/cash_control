@@ -6,8 +6,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
-
+import com.cashcontrol.entity.Transactions;
 import com.cashcontrol.entity.Users;
+import com.cashcontrol.service.TransactionService;
 import com.cashcontrol.service.UserService;
 
 @RestController
@@ -27,6 +28,7 @@ public class Controller {
      */
 
     @Autowired private UserService userService;
+    @Autowired private TransactionService transactionService;
 
     // ALL USERS
 
@@ -56,5 +58,18 @@ public class Controller {
     @GetMapping("/api/users/{id}")
     public Users getUser(@PathVariable Long id){
         return userService.getUser(id);
+    }
+
+    //*****************Start of controller for transactions */
+    
+    @PostMapping("/api/transactions")
+    public Transactions saveTransaction(@RequestBody Transactions transaction){
+        return transactionService.saveTransaction(transaction);
+    }
+
+    //list all transactions currently in the db
+    @GetMapping("/api/transactions")
+    public List<Transactions> fetchTransactionsList() {
+        return transactionService.fetchTransactionsList();
     }
 }
