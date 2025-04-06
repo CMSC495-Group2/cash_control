@@ -72,4 +72,9 @@ public class Controller {
     public List<Transactions> fetchTransactionsList() {
         return transactionService.fetchTransactionsList();
     }
+
+    @GetMapping("/api/singletransaction")
+    public Transactions fetchTransactionsList(@RequestParam("id") Long transactionID) {
+        return transactionService.getTransaction(transactionID);
+    }
 }
