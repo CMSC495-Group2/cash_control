@@ -6,8 +6,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
-
+import com.cashcontrol.entity.Transactions;
 import com.cashcontrol.entity.Users;
+import com.cashcontrol.service.TransactionService;
 import com.cashcontrol.service.UserService;
 
 @RestController
@@ -27,6 +28,7 @@ public class Controller {
      */
 
     @Autowired private UserService userService;
+    @Autowired private TransactionService transactionService;
 
     // ALL USERS
 
@@ -41,14 +43,20 @@ public class Controller {
         return userService.fetchUserList();
     }
 
+    //list single user currently in the db
+    @GetMapping("/api/user")
+    public Users getUsers(@RequestParam("id") Long userID) {
+        return userService.getUser(userID);
+    }
+
     @PutMapping("/api/users")
     public String getTransactions() {
         return "Tranactions";
     }
 
     @DeleteMapping("/api/users")
-    public String addTransaction() {
-        return "Add Transaction";
+    public void deleteUser(@RequestParam("id") Long UserID) {
+        userService.deleteUserById(UserID);
     }
 
     // SINGLE USER
@@ -56,5 +64,25 @@ public class Controller {
     @GetMapping("/api/users/{id}")
     public Users getUser(@PathVariable Long id){
         return userService.getUser(id);
+    }
+
+    //*****************Start of controller for transactions */
+    
+    //insert transaction into DB
+    @PostMapping("/api/transactions")
+    public Transactions saveTransaction(@RequestBody Transactions transaction){
+        return transactionService.saveTransaction(transaction);
+    }
+
+    //list all transactions currently in the db. NOTE: /api/transaction is different from /api/transactions
+    @GetMapping("/api/transactions")
+    public List<Transactions> fetchTransactionsList() {
+        return transactionService.fetchTransactionsList();
+    }
+
+    //get single transaction from db. NOTE: /api/transaction is different from /api/transactions
+    @GetMapping("/api/transaction")
+    public Transactions fetchTransactionsList(@RequestParam("id") Long transactionID) {
+        return transactionService.getTransaction(transactionID);
     }
 }
