@@ -6,14 +6,14 @@ import React, { useEffect, useState } from 'react';
 const SummariesChart = () => {
   const [summary, setSummary] = useState({ income: 0, expenses: 0 });
 
-  useEffect(() => {
-    fetchBudgetSummary()
-      .then(data => setSummary(data))
-      .catch(error => {
-        console.error("Failed to fetch budget summary:", error);
-        // Optional: Handle fallback data here
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetchBudgetSummary()
+  //     .then(data => setSummary(data))
+  //     .catch(error => {
+  //       console.error("Failed to fetch budget summary:", error);
+  //       // Optional: Handle fallback data here
+  //     });
+  // }, []);
 
   const totalBalance = summary.income - summary.expenses;
 

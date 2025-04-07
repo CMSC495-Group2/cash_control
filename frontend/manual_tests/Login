@@ -1,0 +1,12 @@
+1. Click "Login" in the nav bar
+2. Verify you can enter Name and Email into a form
+3. Verify there is a button to click in order to login
+4. Enter valid name but invalid email
+5. Verify you are shown a validation error message
+6. Enter invalid name but valid email
+7. Verify you are shown a validation error message
+8. Attempt to login using various invalid names and emails
+9. Verify you are shown a validation error message for each one
+10. Attempt to login with valid name and email
+11. Verify you are able to login
+12. Verify the Login button in the global navigation bar changed to Logout
