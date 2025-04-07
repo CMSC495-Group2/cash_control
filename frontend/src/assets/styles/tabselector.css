@@ -12,10 +12,10 @@
   top: 50px;
   color: rgb(255, 255, 255);
   background-color: rgb(132, 228, 168, 0.6);
-  padding: 1.5rem;
+  padding: 2rem;
   border-radius: 0.2rem;
   box-shadow: 0 0 0.5rem rgb(22, 44, 63);
-  font-size: 18pt;
+  font-size: 14pt;
   font-weight: bold;
 }
 
@@ -54,4 +54,11 @@
 
 .tab-selector .tabs li:hover::after {
   width: 100%;
+}
+
+.tab-content{
+  padding-top: 12rem;
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: center;
 }

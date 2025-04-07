@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-// import { fetchBudgetSummaries } from '../api/summaryApi'; // Enable when backend is up
+import { getTransactionsList } from '../api/transactionApi';
 
 const SummariesChart = () => {
   const [summaries, setSummaries] = useState({
@@ -9,23 +9,58 @@ const SummariesChart = () => {
     last365: { income: 0, expenses: 0 },
   });
 
-  // Get last month name dynamically
+  const now = new Date();
+  const startOfYear = new Date(now.getFullYear(), 0, 1);
+  const last30Days = new Date(now);
+  last30Days.setDate(now.getDate() - 30);
+  const last365Days = new Date(now);
+  last365Days.setDate(now.getDate() - 365);
+  const lastMonthStart = new Date(now.getFullYear(), now.getMonth() - 1, 1);
+  const lastMonthEnd = new Date(now.getFullYear(), now.getMonth(), 0); // last day of last month
+
   const getLastMonthName = () => {
-    const now = new Date();
-    const lastMonthDate = new Date(now.getFullYear(), now.getMonth() - 1);
-    return lastMonthDate.toLocaleString('default', { month: 'long' });
+    return lastMonthStart.toLocaleString('default', { month: 'long' });
+  };
+
+  const calculateSummaries = (transactions) => {
+    const summaries = {
+      current30: { income: 0, expenses: 0 },
+      lastMonth: { income: 0, expenses: 0 },
+      ytd: { income: 0, expenses: 0 },
+      last365: { income: 0, expenses: 0 },
+    };
+
+    transactions.forEach((tx) => {
+      const date = new Date(tx.dateHelper);
+      const amount = tx.amount;
+      const isIncome = tx.transactionType === "Income";
+
+      const addToSummary = (key) => {
+        if (isIncome) summaries[key].income += amount;
+        else summaries[key].expenses += amount;
+      };
+
+      if (date >= last30Days) addToSummary("current30");
+      if (date >= lastMonthStart && date <= lastMonthEnd) addToSummary("lastMonth");
+      if (date >= startOfYear) addToSummary("ytd");
+      if (date >= last365Days) addToSummary("last365");
+    });
+
+    return summaries;
   };
 
   useEffect(() => {
-    // Using mock data while backend is disabled
-    setSummaries({
-      current30: { income: 2200, expenses: 1450 },
-      lastMonth: { income: 3000, expenses: 2700 },
-      ytd: { income: 18500, expenses: 12350 },
-      last365: { income: 42000, expenses: 38000 },
-    });
-
-    // fetchBudgetSummaries().then(data => setSummaries(data)).catch(console.error);
+    const fetchTransactions = async () => {
+      try {
+        const response = await getTransactionsList();
+        const data = response.data || [];
+        const calculated = calculateSummaries(data);
+        setSummaries(calculated);
+      } catch (error) {
+        console.error("Error fetching transactions: ", error);
+      }
+    };
+    fetchTransactions();
   }, []);
 
   const renderSection = (label, data) => {
