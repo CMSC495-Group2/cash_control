@@ -1,0 +1,11 @@
+1. Open the transactions page (http://localhost:3000/user-portal/2)
+2. Make note of all existing transactions
+3. Refresh the browser 
+4. Verify all transactions persisted
+5. Close the browser comletely
+6. Re-open the browser and login (if forced)
+7. Verify all transactions persisted
+8. Stop the backend from running
+9. Restart the backend
+10. Login
+11. Verify the transactions persisted

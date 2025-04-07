@@ -1,0 +1,11 @@
+1. Open the transactions page (http://localhost:3000/user-portal/2)
+2. Under "Add New Transaction" verify there is a way to add transactions
+3. Verify you can enter all of the following information: date, type = income, category, amount, and description
+4. Complete the transaction entry
+5. Verify the transaction is added to the list
+6. Verify the date is correct
+7. Verify the description is correct
+8. Verify the amount is correct
+9. Verify the type is correct
+10. Verify the category is correct
+

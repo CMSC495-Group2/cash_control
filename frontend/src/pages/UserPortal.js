@@ -1,6 +1,6 @@
 import { TabSelector } from "./../components/TabSelector";
-import { TransactionsList } from "./../components/TransactionsList";
-import SummariesChart from './../components/SummariesChart'; // changed to match matt's summaries chart
+import {TransactionsList}  from "../components/TransactionsList";
+import SummariesChart  from "../components/SummariesChart";
 import React, { useState, useEffect } from "react";
 import NavBar from "../components/NavBar";
 import { useParams } from "react-router-dom";

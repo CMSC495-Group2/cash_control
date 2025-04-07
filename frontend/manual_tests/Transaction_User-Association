@@ -1,0 +1,11 @@
+You will need two users for this test
+
+1. Login as one user and navigate to the transactions page
+2. Make note of or take a screenshot of the transactions listed
+3. Logout
+4. Login as a different user and navigate to the transactions page
+5. Add a new transaction
+6. Verify the transaction is displayed
+7. Logout
+8. Login as your first user and navigate to the transactions page
+9. Verify you do NOT see the transaction that you entered earlier as the other user

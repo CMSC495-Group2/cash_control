@@ -1,0 +1,6 @@
+1. Open the transactions page (http://localhost:3000/user-portal/2)
+2. Verify you see a list of existing transactions
+3. Click the Delete button to delete a transaction
+4. Verify the transaction is deleted
+5. Refresh the page
+6. Verify the transaction is still deleted
