@@ -1,8 +1,7 @@
 package com.cashcontrol.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -84,5 +83,11 @@ public class Controller {
     @GetMapping("/api/transaction")
     public Transactions fetchTransactionsList(@RequestParam("id") Long transactionID) {
         return transactionService.getTransaction(transactionID);
+    }
+
+    //delete single transaction from db
+    @DeleteMapping("/api/transaction")
+    public void deleteTransaction(@RequestParam("id") Long transactionID) {
+        transactionService.deleteTransactionById(transactionID);
     }
 }

@@ -1,9 +1,9 @@
 import React from "react";
 
-export function TabSelector({ activeTab, setActiveTab }) {
+export function TabSelector({ activeTab, setActiveTab, username }) {
   return (
     <aside className="tab-selector">
-      <header>User Portal</header>
+      <header>Welcome {username}!</header>
       <ul className="tabs">
         <li
           className={activeTab === "summaries-chart" ? "active" : ""}
@@ -18,8 +18,8 @@ export function TabSelector({ activeTab, setActiveTab }) {
           <i className="fa fa-receipt"></i> &nbsp; Transactions
         </li>
         <li
-          className={activeTab === "add-transaction" ? "active" : ""}
-          onClick={() => setActiveTab("add-transaction")}
+          className={activeTab === "transaction-container" ? "active" : ""}
+          onClick={() => setActiveTab("transaction-container")}
         >
           <i className="fa fa-plus"></i> &nbsp; New Transaction
         </li>
