@@ -40,15 +40,15 @@ const LoginForm = () => {
 
       // Find the correct user with name and email
       const match = users.find((user) =>{
-        console.log(user);
+        //console.log(user);
         return user.email === formData.email
       });
 
-      console.log (match);
+      //console.log (match);
 
       if(match){
         // Get the user 
-        console.log(match.userID)
+        //console.log(match.userID)
         const userResponse = await getUser(match.userID);
         const user = userResponse.data;
 

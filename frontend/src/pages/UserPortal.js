@@ -21,7 +21,7 @@ const UserPortal = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        console.log("FETCH USER id: ", id);
+        //console.log("FETCH USER id: ", id);
         const response = await getUser(id);
         setUser(response.data);
       } catch (error) {
