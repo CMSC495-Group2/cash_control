@@ -41,6 +41,7 @@ const TransactionForm = ({ userID, onAddTransaction }) => {
 
       <label htmlFor="transactionType">Type</label>
       <select
+        id="transactionType"
         name="transactionType"
         value={formData.transactionType}
         onChange={handleChange}
@@ -54,6 +55,7 @@ const TransactionForm = ({ userID, onAddTransaction }) => {
       <input
         type="number"
         name="amount"
+        id="amount"
         value={formData.amount}
         onChange={handleChange}
         required
@@ -63,6 +65,7 @@ const TransactionForm = ({ userID, onAddTransaction }) => {
       <input
         type="date"
         name="dateHelper"
+        id="dateHelper"
         value={formData.dateHelper}
         onChange={handleChange}
         required
@@ -72,6 +75,7 @@ const TransactionForm = ({ userID, onAddTransaction }) => {
       <input
         type="text"
         name="category"
+        id="category"
         value={formData.category}
         onChange={handleChange}
         required
@@ -81,6 +85,7 @@ const TransactionForm = ({ userID, onAddTransaction }) => {
       <input
         type="text"
         name="description"
+        id="description"
         value={formData.description}
         onChange={handleChange}
         required

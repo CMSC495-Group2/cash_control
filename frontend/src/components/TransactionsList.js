@@ -37,7 +37,6 @@ export function TransactionsList({ transactions, deleteTransaction }) {
               <td>
                 <button
                   onClick={() => {
-                    console.log("Click for ID: ", transaction.transactionID)
                     deleteTransaction(transaction.transactionID)}}
                   className="delete-button"
                 >
