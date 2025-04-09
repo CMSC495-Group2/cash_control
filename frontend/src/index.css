@@ -9,6 +9,8 @@
 @import url("./assets/styles/loginform.css");
 @import url("./assets/styles/userportal.css");
 @import url("./assets/styles/tabselector.css");
+@import url("./assets/styles/transactionmodal.css");
+@import url("./assets/styles/transactionsfilter.css");
 
 * {
   margin: 0;

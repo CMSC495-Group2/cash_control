@@ -1,6 +1,11 @@
 import React from "react";
 
-export function TabSelector({ activeTab, setActiveTab, username }) {
+export function TabSelector({
+  activeTab,
+  setActiveTab,
+  username,
+  onOpenModal,
+}) {
   return (
     <aside className="tab-selector">
       <header>Welcome {username}!</header>
@@ -23,9 +28,10 @@ export function TabSelector({ activeTab, setActiveTab, username }) {
         >
           <i className="fa fa-plus"></i> &nbsp; New Transaction
         </li>
-        <li>Another</li>
-        <li>And Another one</li>
       </ul>
+      <button className="add-transaction-btn" onClick={onOpenModal}>
+        <i className="fa fa-plus"></i>
+      </button>
     </aside>
   );
 }
