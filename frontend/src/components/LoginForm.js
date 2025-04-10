@@ -39,10 +39,10 @@ const LoginForm = () => {
       const users = response.data;
 
       // Find the correct user with name and email
-      const match = users.find((user) =>{
-        //console.log(user);
-        return user.email === formData.email
-      });
+      const match = users.find((user) =>
+          user.email.toLowerCase().trim() === formData.email.toLowerCase().trim() &&
+          user.name.toLowerCase().trim() === formData.username.toLowerCase().trim()
+      );
 
       //console.log (match);
 
@@ -81,6 +81,7 @@ const LoginForm = () => {
               <input
                 type="text"
                 id="name"
+                name="username"
                 placeholder="Enter your name"
                 ref={userRef}
                 autoComplete="off"
