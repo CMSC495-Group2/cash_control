@@ -11,9 +11,17 @@ function GetStartedForm() {
   });
 
   const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    // If the field is 'name', check for digits
+    if (name === "name" && /\d/.test(value)) {
+      alert("The Name field should not contain digits.");
+      return; // Exit early without updating state
+    }
+
     setFormData((prev) => ({
       ...prev,
-      [event.target.name]: event.target.value,
+      [name]: value,
     }));
   };
 
