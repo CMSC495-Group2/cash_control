@@ -8,7 +8,7 @@ export function TabSelector({
 }) {
   return (
     <aside className="tab-selector">
-      <header>Welcome {username}!</header>
+      <header>Welcome, {username}!</header>
       <ul className="tabs">
         <li
           className={activeTab === "summaries-chart" ? "active" : ""}
@@ -22,16 +22,18 @@ export function TabSelector({
         >
           <i className="fa fa-receipt"></i> &nbsp; Transactions
         </li>
-        <li
+        {/* <li
           className={activeTab === "transaction-container" ? "active" : ""}
           onClick={() => setActiveTab("transaction-container")}
         >
           <i className="fa fa-plus"></i> &nbsp; New Transaction
-        </li>
+        </li> */}
       </ul>
-      <button className="add-transaction-btn" onClick={onOpenModal}>
-        <i className="fa fa-plus"></i>
-      </button>
+      <div className="modal-button-container">
+        <button className="add-transaction-btn" onClick={onOpenModal}>
+          <i className="fa fa-plus"></i>
+        </button>
+      </div>
     </aside>
   );
 }

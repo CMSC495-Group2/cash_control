@@ -17,7 +17,12 @@ const TransactionForm = ({ userID, onAddTransaction }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (formData.amount && formData.dateHelper && formData.category && formData.description) {
+    if (
+      formData.amount &&
+      formData.dateHelper &&
+      formData.category &&
+      formData.description
+    ) {
       const transaction = {
         ...formData,
         userID: userID,
@@ -36,58 +41,58 @@ const TransactionForm = ({ userID, onAddTransaction }) => {
 
   return (
     <div className="transaction-container">
-    <form className="transaction-form" onSubmit={handleSubmit}>
-      <h2>Add Transaction</h2>
+      <form className="transaction-form" onSubmit={handleSubmit}>
+        <h2>Add Transaction</h2>
 
-      <label htmlFor="transactionType">Type</label>
-      <select
-        name="transactionType"
-        value={formData.transactionType}
-        onChange={handleChange}
-        className="transaction-form-input"
-      >
-        <option value="Income">Income</option>
-        <option value="Expense">Expense</option>
-      </select>
+        <label htmlFor="transactionType">Type</label>
+        <select
+          name="transactionType"
+          value={formData.transactionType}
+          onChange={handleChange}
+          className="transaction-form-input"
+        >
+          <option value="Income">Income</option>
+          <option value="Expense">Expense</option>
+        </select>
 
-      <label htmlFor="amount">Amount</label>
-      <input
-        type="number"
-        name="amount"
-        value={formData.amount}
-        onChange={handleChange}
-        required
-      />
+        <label htmlFor="amount">Amount</label>
+        <input
+          type="number"
+          name="amount"
+          value={formData.amount}
+          onChange={handleChange}
+          required
+        />
 
-      <label htmlFor="dateHelper">Date</label>
-      <input
-        type="date"
-        name="dateHelper"
-        value={formData.dateHelper}
-        onChange={handleChange}
-        required
-      />
+        <label htmlFor="dateHelper">Date</label>
+        <input
+          type="date"
+          name="dateHelper"
+          value={formData.dateHelper}
+          onChange={handleChange}
+          required
+        />
 
-      <label htmlFor="category">Category</label>
-      <input
-        type="text"
-        name="category"
-        value={formData.category}
-        onChange={handleChange}
-        required
-      />
+        <label htmlFor="category">Category</label>
+        <input
+          type="text"
+          name="category"
+          value={formData.category}
+          onChange={handleChange}
+          required
+        />
 
-      <label htmlFor="description">Description</label>
-      <input
-        type="text"
-        name="description"
-        value={formData.description}
-        onChange={handleChange}
-        required
-      />
+        <label htmlFor="description">Description</label>
+        <input
+          type="text"
+          name="description"
+          value={formData.description}
+          onChange={handleChange}
+          required
+        />
 
-      <button type="submit">Add Transaction</button>
-    </form>
+        <button type="submit">Add Transaction</button>
+      </form>
     </div>
   );
 };

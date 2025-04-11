@@ -88,36 +88,38 @@ const UserPortal = () => {
       {user ? (
         <div className="user-portal">
           <NavBar />
-          <TabSelector
-            activeTab={activeTab}
-            setActiveTab={setActiveTab}
-            username={user.name}
-            onOpenModal={() => setIsModalOpen(true)}
-          />
-          <div className="tab-content">
-            {activeTab === "summaries-chart" && (
-              <div className="summaries-chart">
-                <SummariesChart balance={balance} />
-              </div>
-            )}
-            {activeTab === "transactions-list" && (
-              <div className="transactions-list">
-                <TransactionsFilter onFilter={handleFilter} />
-                <TransactionsList
-                  transactions={transactions}
-                  deleteTransaction={deleteTransaction}
-                  filters={filters}
-                />
-              </div>
-            )}
-            {activeTab === "transaction-container" && (
-              <div className="transaction-container">
-                <TransactionForm
-                  userID={user.userID}
-                  onAddTransaction={handleAddTransaction}
-                />
-              </div>
-            )}
+          <div className="main-content">
+            <TabSelector
+              activeTab={activeTab}
+              setActiveTab={setActiveTab}
+              username={user.name}
+              onOpenModal={() => setIsModalOpen(true)}
+            />
+            <div className="tab-content">
+              {activeTab === "summaries-chart" && (
+                <div className="summaries-chart">
+                  <SummariesChart balance={balance} />
+                </div>
+              )}
+              {activeTab === "transactions-list" && (
+                <div className="transactions-list">
+                  <TransactionsFilter onFilter={handleFilter} />
+                  <TransactionsList
+                    transactions={transactions}
+                    deleteTransaction={deleteTransaction}
+                    filters={filters}
+                  />
+                </div>
+              )}
+              {/*      {activeTab === "transaction-container" && (
+                <div className="transaction-container">
+                  <TransactionForm
+                    userID={user.userID}
+                    onAddTransaction={handleAddTransaction}
+                  />
+                </div>
+              )} */}
+            </div>
           </div>
           <TransactionModal
             isOpen={isModalOpen}

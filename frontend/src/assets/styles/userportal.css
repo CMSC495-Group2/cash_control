@@ -1,4 +1,45 @@
+/*========SITE CONTAINER========*/
 .user-portal {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: lightgray;
+  color: #374c59;
+}
+
+/*========Navigation Bar [TOP]========*/
+.user-portal .navbar {
+  background-color: white;
+  height: 76px;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+/*========Everything below the navbar========*/
+.user-portal .main-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0.2rem;
+}
+
+/*========Content Within Tabs========*/
+.user-portal .tab-content {
+  flex: 1;
+  background-color: #84e4a8;
+  padding: 1rem;
+  overflow-y: auto;
+  border-radius: 0.2rem;
+  position: relative;
+  margin: 5px;
+}
+
+/* .user-portal {
   background-color: lightgray;
   position: relative;
   color: #374c59;
@@ -36,13 +77,11 @@
   top: 76px;
   left: 0;
 }
-
-.user-portal .tab-content {
+/*Parent to transactions-list, summaries-chart, add-transactions*/
+/*.user-portal .tab-content {
+  grid-area: tab-content;
   grid-area: content;
   background-color: #84e4a8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: fixed;
   top: 81px;
   left: 260px;
@@ -58,10 +97,6 @@
 }
 
 .user-portal .tab-content .add-transaction {
-  background-color: transparent;
-}
-
-.user-portal .tab-content .transactions-list {
   background-color: transparent;
 }
 
@@ -94,4 +129,4 @@
   padding-bottom: 10px;
   color: #374c59;
 }
- */
+  */

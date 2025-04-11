@@ -11,6 +11,7 @@
 @import url("./assets/styles/tabselector.css");
 @import url("./assets/styles/transactionmodal.css");
 @import url("./assets/styles/transactionsfilter.css");
+@import url("./assets/styles/transactionslist.css");
 
 * {
   margin: 0;
