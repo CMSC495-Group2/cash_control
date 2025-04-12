@@ -1,42 +1,54 @@
 .tab-selector {
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  position: relative;
+  background-color: #374c59;
   border-radius: 0.2rem;
+  margin: 5px;
+  margin-right: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  width: 250px;
 }
 
 .tab-selector header {
   position: absolute;
-  top: 50px;
-  color: rgb(255, 255, 255);
-  background-color: rgb(132, 228, 168, 0.6);
-  padding: 2rem;
+  top: 32px;
+  left: 50px;
+  right: 50px;
+  font-size: 16pt;
+  background-color: #84e4a8;
+  text-align: center;
+  padding: 5px;
   border-radius: 0.2rem;
-  box-shadow: 0 0 0.5rem rgb(22, 44, 63);
-  font-size: 14pt;
-  font-weight: bold;
+  color: white;
 }
 
 .tab-selector .tabs {
-  position: absolute;
-  top: 10rem;
-  /* background-color: #84e4a8; */
-  background-color: rgb(55, 76, 89, 0.6);
-  color: white;
-  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   border-radius: 0.2rem;
+  background-color: #374c59;
+  color: white;
+  position: absolute;
+  top: 20%;
   width: 100%;
+  padding: 0;
 }
 
 .tab-selector .tabs li {
   list-style: none;
-  padding: 25px;
-  border-radius: 0.2rem;
+  padding: 10px;
+  margin-bottom: 2.5rem;
+  color: white;
   cursor: pointer;
-  position: relative;
   width: 100%;
+  text-align: start;
+  margin-left: 3rem;
+  position: relative;
 }
 
 .tab-selector .tabs li::after {
@@ -47,18 +59,36 @@
   width: 0;
   height: 100%;
   border-radius: 20px 0 0 20px;
-  background-color: rgb(132, 228, 168);
+  background-color: rgb(132, 228, 168, 0.7);
   transition: all 300ms ease-in-out;
-  z-index: -1;
 }
 
 .tab-selector .tabs li:hover::after {
   width: 100%;
 }
 
-.tab-content{
-  padding-top: 12rem;
-  padding-bottom: 2rem;
-  display: flex;
-  justify-content: center;
+.modal-button-container {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+.modal-button-container .add-transaction-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 25px;
+  width: 80%;
+  padding: 20px;
+  border-radius: 0.2rem;
+  background-color: #84e4a8;
+  color: white;
+  font-weight: bold;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.modal-button-container .add-transaction-btn i {
+  margin-right: 8px;
 }
