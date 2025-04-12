@@ -3,7 +3,6 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  background-color: white;
   padding: 20px;
 }
 /*Child 1 of transactions-list
@@ -14,7 +13,6 @@
   position: relative;
   width: 100%;
   height: 100vh;
-  background-color: #f0f0f0;
 }
 
 .transactions-wrapper h2 {
@@ -27,9 +25,6 @@
 }
 /*Child of transaction-wrapper*/
 .transactions-table {
-  position: absolute;
-  bottom: 0;
-  left: 0;
   border-collapse: collapse;
   border: 1px solid black;
   table-layout: fixed;

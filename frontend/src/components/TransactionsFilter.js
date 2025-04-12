@@ -57,7 +57,6 @@ const TransactionsFilter = ({ onFilter }) => {
         <div className="filter-row">
           <div className="filter-group">
             <label>Specific Date:</label>
-
             <input
               type="date"
               name="date"
@@ -65,10 +64,8 @@ const TransactionsFilter = ({ onFilter }) => {
               onChange={handleChange}
             />
           </div>
-
           <div className="filter-group">
             <label>Date Range:</label>
-
             <div className="date-range">
               <input
                 type="date"
@@ -77,9 +74,7 @@ const TransactionsFilter = ({ onFilter }) => {
                 onChange={handleChange}
                 placeholder="Start"
               />
-
               <span>to</span>
-
               <input
                 type="date"
                 name="endDate"
@@ -90,23 +85,18 @@ const TransactionsFilter = ({ onFilter }) => {
             </div>
           </div>
         </div>
-
         <div className="filter-row">
           <div className="filter-group">
             <label>Type:</label>
-
             <select name="type" value={filters.type} onChange={handleChange}>
               <option value="">All</option>
-
               <option value="income">Income</option>
-
               <option value="expense">Expense</option>
             </select>
           </div>
 
           <div className="filter-group">
             <label>Category:</label>
-
             <input
               type="text"
               name="category"
@@ -116,11 +106,9 @@ const TransactionsFilter = ({ onFilter }) => {
             />
           </div>
         </div>
-
         <div className="filter-row">
           <div className="filter-group">
             <label>Amount Range:</label>
-
             <div className="amount-range">
               <input
                 type="number"
@@ -131,9 +119,7 @@ const TransactionsFilter = ({ onFilter }) => {
                 min="0"
                 step="0.01"
               />
-
               <span>to</span>
-
               <input
                 type="number"
                 name="maxAmount"
@@ -145,10 +131,8 @@ const TransactionsFilter = ({ onFilter }) => {
               />
             </div>
           </div>
-
           <div className="filter-group">
             <label>Exact Amount:</label>
-
             <input
               type="number"
               name="amount"
@@ -160,11 +144,9 @@ const TransactionsFilter = ({ onFilter }) => {
             />
           </div>
         </div>
-
         <div className="filter-row">
           <div className="filter-group full-width">
             <label>Keyword Search:</label>
-
             <input
               type="text"
               name="keyword"
@@ -174,12 +156,10 @@ const TransactionsFilter = ({ onFilter }) => {
             />
           </div>
         </div>
-
         <div className="filter-actions">
           <button type="submit" className="apply-btn">
             Apply Filters
           </button>
-
           <button type="button" onClick={handleReset} className="reset-btn">
             Reset
           </button>

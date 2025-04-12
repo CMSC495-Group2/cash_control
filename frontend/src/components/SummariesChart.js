@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { getTransactionsList } from '../api/transactionApi';
+import React, { useEffect, useState } from "react";
+import { getTransactionsList } from "../api/transactionApi";
 
 const SummariesChart = () => {
   const [summaries, setSummaries] = useState({
@@ -19,7 +19,7 @@ const SummariesChart = () => {
   const lastMonthEnd = new Date(now.getFullYear(), now.getMonth(), 0); // last day of last month
 
   const getLastMonthName = () => {
-    return lastMonthStart.toLocaleString('default', { month: 'long' });
+    return lastMonthStart.toLocaleString("default", { month: "long" });
   };
 
   const calculateSummaries = (transactions) => {
@@ -41,7 +41,8 @@ const SummariesChart = () => {
       };
 
       if (date >= last30Days) addToSummary("current30");
-      if (date >= lastMonthStart && date <= lastMonthEnd) addToSummary("lastMonth");
+      if (date >= lastMonthStart && date <= lastMonthEnd)
+        addToSummary("lastMonth");
       if (date >= startOfYear) addToSummary("ytd");
       if (date >= last365Days) addToSummary("last365");
     });
@@ -66,41 +67,53 @@ const SummariesChart = () => {
   const renderSection = (label, data) => {
     const balance = data.income - data.expenses;
     return (
-      <div style={{
-        backgroundColor: '#f9f9f9',
-        borderRadius: '10px',
-        padding: '20px',
-        boxShadow: '0 2px 6px rgba(0, 0, 0, 0.1)',
-        minWidth: '250px',
-      }}>
-        <h3 style={{ color: '#444', marginBottom: '10px' }}>{label}</h3>
-        <p><strong>Total Balance:</strong> ${balance.toFixed(2)}</p>
-        <p style={{ color: '#2e7d32' }}>Income: ${data.income.toFixed(2)}</p>
-        <p style={{ color: '#c62828' }}>Expenses: ${data.expenses.toFixed(2)}</p>
+      <div
+        style={{
+          backgroundColor: "#f9f9f9",
+          borderRadius: "10px",
+          padding: "20px",
+          boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)",
+          minWidth: "250px",
+        }}
+      >
+        <h3 style={{ color: "#444", marginBottom: "10px" }}>{label}</h3>
+        <p>
+          <strong>Total Balance:</strong> ${balance.toFixed(2)}
+        </p>
+        <p style={{ color: "#2e7d32" }}>Income: ${data.income.toFixed(2)}</p>
+        <p style={{ color: "#c62828" }}>
+          Expenses: ${data.expenses.toFixed(2)}
+        </p>
       </div>
     );
   };
 
   return (
-    <div style={{
-      padding: '40px',
-      fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
-    }}>
-      <h2 style={{ textAlign: 'center', marginBottom: '30px', fontSize: '28px' }}>
+    <div
+      style={{
+        padding: "40px",
+        fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+      }}
+    >
+      <h2
+        style={{ textAlign: "center", marginBottom: "30px", fontSize: "28px" }}
+      >
         Budget Summary
       </h2>
 
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        gridGap: '20px',
-        maxWidth: '900px',
-        margin: '0 auto',
-      }}>
-        {renderSection('Last 30 Days', summaries.current30)}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gridGap: "20px",
+          maxWidth: "900px",
+          margin: "0 auto",
+        }}
+      >
+        {renderSection("Last 30 Days", summaries.current30)}
         {renderSection(`${getLastMonthName()}’s Budget`, summaries.lastMonth)}
-        {renderSection('Year to Date (YTD)', summaries.ytd)}
-        {renderSection('Last 365 Days', summaries.last365)}
+        {renderSection("Year to Date (YTD)", summaries.ytd)}
+        {renderSection("Last 365 Days", summaries.last365)}
       </div>
     </div>
   );
