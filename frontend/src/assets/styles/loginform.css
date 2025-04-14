@@ -85,6 +85,7 @@
     color: #374c59;
     border: 1px solid #374c59;
     box-shadow: 0 0px 100px rgba(0,0,0,0.8);
+    cursor: pointer;
 }
 
 .login-form span{
