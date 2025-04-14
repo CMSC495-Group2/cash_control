@@ -79,13 +79,19 @@
     
 }
 
-.login-form button:hover{
+.login-form button:hover,
+.login-form button:focus {
     background-color: #84e4a8;
     font-size: 1rem;
     color: #374c59;
     border: 1px solid #374c59;
     box-shadow: 0 0px 100px rgba(0,0,0,0.8);
     cursor: pointer;
+}
+
+.login-form button:focus {
+    outline: 2px solid #374c59;
+    outline-offset: 2px;
 }
 
 .login-form span{
