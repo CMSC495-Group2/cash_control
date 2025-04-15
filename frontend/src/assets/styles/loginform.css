@@ -103,13 +103,13 @@
 a {
     color: #0066cc; /* clear, readable blue */
     text-decoration: underline;
-    transition: all 0.2s ease-in-out;
 }
 
 a:hover,
 a:focus {
     color: #004999; /* darker shade for hover/focus */
     outline: none;
+    background-color: white;
     text-decoration: underline;
 }
 
