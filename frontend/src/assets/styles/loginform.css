@@ -109,7 +109,6 @@ a {
 a:hover,
 a:focus {
     color: #004999; /* darker shade for hover/focus */
-    background-color: #e6f3ff; /* light highlight for visibility */
     outline: none;
     text-decoration: underline;
 }
