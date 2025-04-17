@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getTransactionsList } from "../api/transactionApi";
+//import view_graph from "../assets/images/view_graph.png";
 
 const SummariesChart = () => {
   const [summaries, setSummaries] = useState({
@@ -69,7 +70,11 @@ const SummariesChart = () => {
     return (
       <div
         style={{
-          backgroundColor: "#f9f9f9",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "white",
           borderRadius: "10px",
           padding: "20px",
           boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)",
@@ -96,7 +101,12 @@ const SummariesChart = () => {
       }}
     >
       <h2
-        style={{ textAlign: "center", marginBottom: "30px", fontSize: "28px" }}
+        style={{
+          textAlign: "center",
+          marginBottom: "30px",
+          fontSize: "28px",
+          color: "#374c59",
+        }}
       >
         Budget Summary
       </h2>
@@ -115,6 +125,10 @@ const SummariesChart = () => {
         {renderSection("Year to Date (YTD)", summaries.ytd)}
         {renderSection("Last 365 Days", summaries.last365)}
       </div>
+      {/*  <div className="graphs">
+        <img className="view-graph-img" src={view_graph} alt="View Graph" />
+        <h3 className="graph-title">View Graph</h3>
+      </div> */}
     </div>
   );
 };

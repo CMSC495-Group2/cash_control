@@ -45,7 +45,6 @@ export function TransactionsList({
       return false;
 
     // Filter by amount range ==================================================
-
     if (filters.minAmount && transaction.amount < parseFloat(filters.minAmount))
       return false;
     if (filters.maxAmount && transaction.amount > parseFloat(filters.maxAmount))
@@ -68,7 +67,6 @@ export function TransactionsList({
     (total, tx) => total + tx.amount,
     0
   );
-
   return (
     <div className="transactions-wrapper">
       <h2>Recent Transactions</h2>
@@ -113,5 +111,4 @@ export function TransactionsList({
     </div>
   );
 }
-
 export default TransactionsList;

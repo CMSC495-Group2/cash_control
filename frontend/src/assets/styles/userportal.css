@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-color: lightgray;
+  background-color: white;
   color: #374c59;
 }
 
@@ -17,6 +17,35 @@
   display: flex;
   align-items: center;
   padding: 0 1rem;
+  position: fixed;
+  top: -70px;
+  left: 0;
+  width: 100%;
+  color: white;
+  transition: top 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.user-portal .navbar::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  transform: translate(-50%);
+  left: 58%;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #374c59;
+  background-color: transparent;
+}
+
+.user-portal .navbar:hover::after {
+  opacity: 0;
+}
+
+.user-portal .navbar:hover {
+  top: 0;
 }
 
 /*========Everything below the navbar========*/
@@ -31,102 +60,10 @@
 /*========Content Within Tabs========*/
 .user-portal .tab-content {
   flex: 1;
-  background-color: #84e4a8;
+  background-color: white;
   padding: 1rem;
   overflow-y: auto;
   border-radius: 0.2rem;
   position: relative;
   margin: 5px;
 }
-
-/* .user-portal {
-  background-color: lightgray;
-  position: relative;
-  color: #374c59;
-  height: 100vh;
-  display: grid;
-  grid-template-areas:
-    "navbar navbar"
-    "tab-selector tab-content";
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  padding: 1rem;
-}
-
-.user-portal .navbar {
-  grid-area: navbar;
-  background-color: white;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 76px;
-}
-
-.user-portal .tab-selector {
-  grid-area: tab-selector;
-  background-color: #374c59;
-  color: white;
-  padding: 20px;
-  margin-left: 5px;
-  margin-top: 5px;
-  box-shadow: 0 4px 8px rgba(34, 118, 66, 0.8);
-  width: 250px;
-  height: calc(100% - 76px);
-  position: fixed;
-  top: 76px;
-  left: 0;
-}
-/*Parent to transactions-list, summaries-chart, add-transactions*/
-/*.user-portal .tab-content {
-  grid-area: tab-content;
-  grid-area: content;
-  background-color: #84e4a8;
-  position: fixed;
-  top: 81px;
-  left: 260px;
-  right: 5px;
-  bottom: 5px;
-  margin: 0;
-  overflow: auto;
-  border-radius: 0.2rem;
-}
-
-.user-portal .tab-content .summaries-chart {
-  background-color: transparent;
-}
-
-.user-portal .tab-content .add-transaction {
-  background-color: transparent;
-}
-
-/* .user-portal::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: inherit;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: -1;
-  filter: brightness(0.6);
-} */
-
-/* .transaction-header {
-  font-size: 2.5rem;
-}
-
-.transactions-list {
-  list-style-type: none;
-  padding: 0;
-}
-
-.transaction-item {
-  margin-bottom: 10px;
-  border-bottom: 1px solid #ccc;
-  font-size: 1.25rem;
-  padding-bottom: 10px;
-  color: #374c59;
-}
-  */
