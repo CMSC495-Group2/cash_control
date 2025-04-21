@@ -30,7 +30,7 @@ public class Users {
     private Long userID;
     private String name;
     private String email;
-    //time created strored as unix millis
+    //time created stored as unix millis
     private Long createdAt = System.currentTimeMillis();
 
 }
