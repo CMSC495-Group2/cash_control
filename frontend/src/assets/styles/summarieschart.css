@@ -1,0 +1,48 @@
+.summaries-chart-container {
+  padding: 40px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.summaries-chart-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #374c59;
+}
+
+.summaries-chart-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.summaries-chart-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  min-width: 250px;
+}
+
+.summaries-chart-item h3 {
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.summaries-chart-item p {
+  margin: 5px 0;
+}
+
+.summaries-chart-item p.income {
+  color: #2e7d32;
+}
+
+.summaries-chart-item p.expenses {
+  color: #c62828;
+}
