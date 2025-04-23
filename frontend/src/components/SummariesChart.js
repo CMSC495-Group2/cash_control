@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getTransactionsList } from "../api/transactionApi";
+import IncomeExpenseChart from "./IncomeExpenseChart";
 
 //*******Extracted all styling to its own css file 'summarieschart.css'*************
 
@@ -85,10 +86,14 @@ const SummariesChart = () => {
       <h2 className="summaries-chart-title">Budget Summary</h2>
       <div className="summaries-chart-grid">
         {renderSection("Last 30 Days", summaries.current30)}
-        {renderSection(`${getLastMonthName()}’s Budget`, summaries.lastMonth)}
+        {renderSection(`${getLastMonthName()}'s Budget`, summaries.lastMonth)}
         {renderSection("Year to Date (YTD)", summaries.ytd)}
         {renderSection("Last 365 Days", summaries.last365)}
       </div>
+      <IncomeExpenseChart
+        summaries={summaries}
+        getLastMonthName={getLastMonthName}
+      />
     </div>
   );
 };
