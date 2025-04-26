@@ -35,8 +35,8 @@ const IncomeExpenseChart = ({ summaries, getLastMonthName }) => {
             summaries.ytd.income,
             summaries.last365.income,
           ],
-          backgroundColor: "rgba(75, 192, 192, 0.6)",
-          borderColor: "rgba(75, 192, 192, 1)",
+          backgroundColor: "rgba(55, 76, 89, 0.9)",
+          borderColor: "rgba(55, 76, 89, 0.9)",
           fill: false,
           tension: 0.4,
         },
@@ -48,8 +48,8 @@ const IncomeExpenseChart = ({ summaries, getLastMonthName }) => {
             summaries.ytd.expenses,
             summaries.last365.expenses,
           ],
-          backgroundColor: "rgba(255, 99, 132, 0.6)",
-          borderColor: "rgba(255, 99, 132, 1)",
+          backgroundColor: "rgba(132, 228, 168, 0.9)",
+          borderColor: "rgba(132, 228, 168, 0.9)",
           fill: false,
           tension: 0.4,
         },
@@ -109,11 +109,15 @@ const IncomeExpenseChart = ({ summaries, getLastMonthName }) => {
 
   return (
     <div className="chart-container">
-      <Bar
-        data={getChartData()}
-        options={getChartOptions("Income Vs. Expenses")}
-      />
-      <Line data={getChartData()} options={getChartOptions("Live Trend")} />
+      <div className="bar-container">
+        <Bar
+          data={getChartData()}
+          options={getChartOptions("Income Vs. Expenses")}
+        />
+      </div>
+      <div className="line-container">
+        <Line data={getChartData()} options={getChartOptions("Live Trend")} />
+      </div>
     </div>
   );
 };
