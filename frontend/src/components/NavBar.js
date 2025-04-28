@@ -22,7 +22,7 @@ function NavBar() {
           <Link to="/login">Login</Link>
         </li>
         <li>
-          <Link to="/user-portal">User Portal (provisional)</Link>
+          <Link to="/user-portal">User Portal</Link>
         </li>
         <li>
           <a
