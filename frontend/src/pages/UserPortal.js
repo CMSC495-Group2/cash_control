@@ -122,14 +122,6 @@ const UserPortal = () => {
                   />
                 </div>
               )}
-              {/*  {activeTab === "transaction-container" && (
-                <div className="transaction-container">
-                  <TransactionForm
-                    userID={user.userID}
-                    onAddTransaction={handleAddTransaction}
-                  />
-                </div>
-              )} */}
             </div>
           </div>
           <TransactionModal

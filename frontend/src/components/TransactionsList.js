@@ -101,7 +101,7 @@ export function TransactionsList({
                   }}
                   className="delete-button"
                 >
-                  Delete
+                  <i className="fa-solid fa-trash"></i>
                 </button>
               </td>
             </tr>

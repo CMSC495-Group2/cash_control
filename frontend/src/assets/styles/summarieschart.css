@@ -1,6 +1,6 @@
 .summaries-chart-container {
   padding: 40px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Spinnaker", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .summaries-chart-title {
@@ -12,7 +12,7 @@
 
 .summaries-chart-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   grid-gap: 20px;
   max-width: 900px;
   margin: 0 auto;
@@ -45,4 +45,26 @@
 
 .summaries-chart-item p.expenses {
   color: #c62828;
+}
+
+.chart-container {
+  width: 100%;
+  max-width: 900px;
+  height: 400px;
+  margin: 50px auto;
+  position: relative;
+}
+
+.bar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.line-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 100%;
 }

@@ -12,6 +12,7 @@
 @import url("./assets/styles/transactionmodal.css");
 @import url("./assets/styles/transactionslist.css");
 @import url("./assets/styles/summarieschart.css");
+@import url("./assets/styles/transactionsfilter.css");
 * {
   margin: 0;
   padding: 0;
